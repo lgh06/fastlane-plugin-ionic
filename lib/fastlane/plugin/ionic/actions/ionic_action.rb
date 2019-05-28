@@ -101,6 +101,10 @@ module Fastlane
         args << '--prod' if params[:prod]
         args << '--browserify' if params[:browserify]
 
+        if !params[:ngconfig].to_s.empty?
+          args << "--configuration=#{Shellwords.escape(params[:ngconfig])}"
+        end
+        
         if !params[:cordova_build_config_file].to_s.empty?
           args << "--buildConfig=#{Shellwords.escape(params[:cordova_build_config_file])}"
         end
