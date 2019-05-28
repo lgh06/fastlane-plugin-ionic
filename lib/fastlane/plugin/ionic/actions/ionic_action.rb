@@ -275,6 +275,14 @@ module Fastlane
             is_string: false
           ),
           FastlaneCore::ConfigItem.new(
+            key: :ngconfig,
+            env_name: "CORDOVA_NGCONFIG",
+            description: "Specifies angular build configuration",
+            default_value: 'test',
+            optional: true,
+            is_string: true
+          ),
+          FastlaneCore::ConfigItem.new(
             key: :cordova_prepare,
             env_name: "CORDOVA_PREPARE",
             description: "Specifies whether to run `ionic cordova prepare` before building",
